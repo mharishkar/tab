@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tabs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/new.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <style>
+  .a{
+    display: none;
+    width: 80%;
+    height: 50px;
+    border: 1px solid grey;
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+    $("#add").click(function(){
+      var n = $( "li" ).length;
+
+    $("ul").append("<li ><a onclick='show(" + n +")'>tab" + n + "</a></li>");
+    $("body").append("<div class='a' id=" + n + ">tab" + n + "</div>");
+
+    });
+
+  });
+  function show(tab) {
+    // Declare all variables
+    var i,a;
+
+    // Get all elements with class="tabcontent" and hide them
+    a = document.getElementsByClassName("a");
+    for (i = 0; i < a.length; i++) {
+        a[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tab).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+  </script>
+</head>
+  <body>
+    <ul class="nav nav-tabs">
+      <li ><a onclick="show(0)">tab1</a></li>
+      <li ><a onclick="show(1)">tab2</a></li>
+      <li ><a onclick="show(2)">tab3</a></li>
+      <button id="add">chubby</button>
+    </ul>
+    <div class="a" id="0">tab1</div>
+    <div class="a" id="1">tab2</div>
+    <div class="a" id="2">tab2</div>
+
+
+  </body>
+  </html>
