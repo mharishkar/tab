@@ -42,7 +42,7 @@
   $(document).ready(function(){
     $("#add").click(function(){
     var n = $( "li" ).length+1;
-    $("ul").append("<li ><a onclick='show(" + n +")'>tab" + n + "&nbsp&nbsp&nbsp<button onclick= $(this).parents('li').hide(); class='fa fa-times' aria-hidden='true'></button></a></li>");
+    $("ul").append("<li ><a onclick='show(" + n +")'>tab" + n + "&nbsp&nbsp&nbsp<button onclick= $(this).parents('li').remove(); class='fa fa-times' aria-hidden='true'></button></a></li>");
     $("body").append("<div class='a' id=" + n + ">tab" + n + "</div>");
         });
         });
@@ -67,14 +67,13 @@
     <h1>Add and Close the Tabs Dynamically</h1>
     <ul class="nav nav-tabs">
       <li ><a onclick="show(0)">tab1&nbsp&nbsp&nbsp<button  onclick= $(this).parents('li').hide(); class="fa fa-times"></button></a></li>
-      <li ><a onclick="show(1)">tab2&nbsp&nbsp&nbsp<button  onclick= $(this).parents('li').hide(); class="fa fa-times"></button></a></li>
-      <li ><a onclick="show(2)">tab3&nbsp&nbsp&nbsp<button  onclick= $(this).parents('li').hide(); class="fa fa-times"></button></a></li>
+      
       <i id="add" class="fa fa-plus" aria-hidden="true"></i>
     </ul>
     <div class="a" id="0">tab1</div>
-    <div class="a" id="1">tab2</div>
-    <div class="a" id="2">tab3</div>
+
     <p id="hide">tab1</p>
+
 
 </body>
   </html>
